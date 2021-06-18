@@ -5,6 +5,7 @@ st.image("logo.jpeg")
 st.title("IMCapp ")
 st.text("Bievenido utiliza nuestra APP para saber")
 st.text("tu Indice de masa corporal (IMC)")
+st.text("LLena tus datos en el sidebar, en el lado izquierdo de la pagina")
 
 st.sidebar.subheader("Bienvenido al MEDPOST")
 st.sidebar.text("Ingresa los datos solicitados")
