@@ -1,6 +1,6 @@
 
 import streamlit as st
-st.image("logo.jpeg")
+#st.image("logo.jpeg")
 
 st.title("IMCapp ")
 st.text("Bievenido utiliza nuestra APP para saber tu Indice de masa corporal (IMC)")
