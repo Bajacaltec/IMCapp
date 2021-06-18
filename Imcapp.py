@@ -3,8 +3,8 @@ import streamlit as st
 st.image("logo.jpeg")
 
 st.title("IMCapp ")
-st.text("Bievenido utiliza nuestra APP para saber tu Indice de masa corporal (IMC)")
-st.text("")
+st.text("Bievenido utiliza nuestra APP para saber")
+st.text("tu Indice de masa corporal (IMC)")
 
 st.sidebar.subheader("Bienvenido al MEDPOST")
 st.sidebar.text("Ingresa los datos solicitados")
