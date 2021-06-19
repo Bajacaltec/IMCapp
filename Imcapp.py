@@ -2,13 +2,14 @@
 import streamlit as st
 st.image("logo.jpeg")
 
-st.title("IMCapp ")
-st.text("Bievenido utiliza nuestra APP para saber")
-st.text("tu Indice de masa corporal (IMC)")
+st.header("IMCapp ")
+st.subheader("Bievenido utiliza nuestra APP para saber tu indice de masa corporalf")
 
 nombre=st.text_input("Nombre del usuario")
-
-st.subheader("Bienvenido " + nombre)
+if not nombre:
+    st.warning("Ingresa tu nombre por favor")
+    st.stop()
+st.success("Gracias por ingresar tu nombre "+nombre)
 edad=st.number_input("Edad")
 peso=st.number_input("Peso")
 talla=st.number_input("Talla en metros")
