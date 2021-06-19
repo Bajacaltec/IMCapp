@@ -19,17 +19,26 @@ butace=st.button("Registrar datos")
 if butace==True:
     imc=peso/talla**2
     imc2=float(imc)
-    st.subheader("Tu IMC es:")
-    st.success(imc2)
+    col1,col2,col3=st.beta_columns(3)
+    with col1:
+        st.title("Tu IMC es:")
+    with col2:
+        st.info(imc2)
     if imc2 < 18.5:
         col1,col2=st.beta_columns(2)
         with col1:
-            st.title("Bajo peso")
+            st.warning("Bajo peso")
             st.write("")
         with col2:
-            st.info("Requieres aumentar tu ingesta calórica, puedes utilizar suplementos alimenticios")
+            st.info("Requieres aumentar tu ingesta calórica")
+            st.success(" RECOMENDACIÓN: utilizar suplementos alimenticios")
     elif imc2 > 18.5 and imc2 < 24.9:
-        st.info("Peso normal, no requieres intervención quirúrgica")
+        col1, col2=st.beta_columns(2)
+        with col1:
+            st.success("Peso normal")
+        with col2:
+            st.info("No requieres intervención quirúrgica")
+            st.info("Felicidades por mantener un peso adecuado")
         st.balloons()
         
     elif imc2 > 25 and imc2 < 29.9:
@@ -47,13 +56,16 @@ if butace==True:
         st.warning("Requieres manejo médico, nutricional y de hábitos, tambien eres candidato a cirugía batriátrica como la Manga gástrica (gastrectomia vertical")
     elif imc2 >40:
         st.info("Obesidad grado III")
-        st.warning("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
+        st.error("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
 #st.form("Registra tus datos"):
 
 #col1,col2,col3=st.beta_columns(3)
 #with col1:
     #st.write("blablablabla")
     
+#st.error da un cuadro rojo
+#st.info da un cuadro azul claro
+#st.warning da un cuadro amarillo
 
 #Agregar un if para el IMC mayor a 35 con comorbilidades
 #If para un IMC mayor a 40 sin comorbilidades
