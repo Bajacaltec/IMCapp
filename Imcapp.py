@@ -43,7 +43,11 @@ if butace==True:
     elif imc2 >40:
         st.subheader("Obesidad grado III")
         st.write("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
+st.form("Registra tus datos"):
 
+#col1,col2,col3=st.beta_columns(3)
+#with col1:
+    #st.write("blablablabla")
     
 
 #Agregar un if para el IMC mayor a 35 con comorbilidades
