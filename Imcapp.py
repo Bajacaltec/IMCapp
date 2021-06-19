@@ -9,12 +9,12 @@ st.subheader("Ingresa los datos solicitados para saber tu IMC y las recomendacio
 
 nombre=st.text_input("Nombre del usuario")
 if not nombre:
-    st.warning("Ingresa tu nombre por favor")
+    st.warning("Ingresa tu nombre")
     st.stop()
 st.success("Gracias por ingresar tu nombre "+nombre)
-edad=st.number_input("Edad")
-peso=st.number_input("Peso")
-talla=st.number_input("Talla en metros")
+edad=st.number_input("Edad",1,99)
+peso=st.number_input("Peso",1,400)
+talla=st.number_input("Talla en metros",1.0,2.5)
 butace=st.button("Registrar datos")
 if butace==True:
     imc=peso/talla**2
@@ -42,7 +42,11 @@ if butace==True:
         st.balloons()
         
     elif imc2 > 25 and imc2 < 29.9:
-        st.info("Sobrepeso, se requiere manejo médico y control de habitos dieteticos")
+        col1,col2=st.beta_columns(2)
+        with col1:
+            st.warning("Sobrepeso")
+        with col2:
+            st.warning("Requieres disminuir tu peso para disminuir el riesgo de enfermedades metabolicas")
     elif imc2 > 29.9 and imc2 < 34.9:
         st.info("Obesidad grado I")
         st.warning ("No eres candidato a cirugía bariátrica, Recomendacion: dieta y aumento de actividad física")
