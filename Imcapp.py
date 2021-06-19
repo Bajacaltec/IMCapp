@@ -21,9 +21,9 @@ if butace==True:
     imc=peso/talla**2
     imc2=int(imc)
     st.subheader(imc2)
-    if imc2 <=18.5:
+    if imc2 <18.5:
         st.subheader("Estas en bajo peso")
-    elif imc2 =>18.5 and <24.9:
+    elif imc2 >18.5 and <24.9:
         st.subheader("Peso normal, no requieres intervención quirúrgica")
     elif imc2 >25 and <29.9:
         st.subheader("Sobrepeso, se requiere manejo médico y control de habitos dieteticos")
