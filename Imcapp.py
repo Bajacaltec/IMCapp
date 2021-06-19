@@ -5,20 +5,22 @@ st.image("logo.jpeg")
 st.title("IMCapp ")
 st.text("Bievenido utiliza nuestra APP para saber")
 st.text("tu Indice de masa corporal (IMC)")
-st.text("LLena tus datos en el sidebar")
-st.text("en el lado izquierdo de la pagina")
 
-st.sidebar.subheader("Bienvenido al MEDPOST")
-st.sidebar.text("Ingresa los datos solicitados")
-nombre=st.sidebar.text_input("Nombre del usuario")
+nombre=st.text_input("Nombre del usuario")
 
-st.sidebar.subheader("Bienvenido " + nombre)
-edad=st.sidebar.number_input("Edad")
-peso=st.sidebar.number_input("Peso")
-talla=st.sidebar.number_input("Talla en metros")
-butace=st.sidebar.button("Registrar datos")
+st.subheader("Bienvenido " + nombre)
+edad=st.number_input("Edad")
+peso=st.number_input("Peso")
+talla=st.number_input("Talla en metros")
+butace=st.button("Registrar datos")
 if butace==True:
     st.subheader("Resultados de tus parámetros antropometricos")
     imc=peso/talla**2
     st.subheader(imc)
 
+
+#Agregar un if para el IMC mayor a 35 con comorbilidades
+#If para un IMC mayor a 40 sin comorbilidades
+#valorar edad
+#si tiene ERGE o Barret no se debe hacer la Gastrectomia en manga
+#Trastorno psiquiatrico no controlado es otra contraindicacion
