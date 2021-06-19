@@ -2,8 +2,9 @@
 import streamlit as st
 st.image("logo.jpeg")
 
-st.header("IMCapp ")
-st.subheader("Bievenido utiliza nuestra APP para saber tu indice de masa corporalf")
+st.subheader("IMCapp ")
+st.subheader("Bievenido utiliza nuestra APP para saber tu indice de masa corporal")
+st.subheader("Ingresa los datos solicitados para saber tu IMC y las recomendaciones actuales")
 
 nombre=st.text_input("Nombre del usuario")
 if not nombre:
@@ -17,7 +18,9 @@ butace=st.button("Registrar datos")
 if butace==True:
     st.subheader("Resultados de tus parámetros antropometricos")
     imc=peso/talla**2
-    st.subheader(imc)
+    imc2=int(imc)
+    st.subheader(imc2)
+    if imc2 
 
 
 #Agregar un if para el IMC mayor a 35 con comorbilidades
