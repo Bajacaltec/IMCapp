@@ -20,7 +20,8 @@ talla=st.number_input("Talla en metros",1.0,2.5)
 butace=st.button("Registrar datos")
 if butace==True:
     imc=peso/talla**2
-    imc2=float(imc)
+    imce=float(imc)
+    imc2=round(imc,2)
     col1,col2,col3=st.beta_columns(3)
     with col1:
         st.title("Tu IMC es:")
