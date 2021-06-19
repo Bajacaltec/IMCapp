@@ -21,7 +21,8 @@ butace=st.button("Registrar datos")
 if butace==True:
     imc=peso/talla**2
     imce=float(imc)
-    imc2=round(imc,2)
+    imc2=round(imc,1)
+    #Redondear el float a 2 digitos decimales nada mas
     col1,col2,col3=st.beta_columns(3)
     with col1:
         st.title("Tu IMC es:")
