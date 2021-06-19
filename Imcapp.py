@@ -17,30 +17,34 @@ peso=st.number_input("Peso")
 talla=st.number_input("Talla en metros")
 butace=st.button("Registrar datos")
 if butace==True:
-    st.subheader("Resultados de tus parámetros antropometricos")
     imc=peso/talla**2
-    imc2=int(imc)
+    imc2=float(imc)
+    st.subheader("Resultados de tus parámetros antropometricos")
     st.subheader(imc2)
     if imc2 < 18.5:
-        st.subheader("Estas en bajo peso")
-    elif imc2 > 18.5 and < 24.9:
+        st.subheader("Bajo peso")
+        st.write("")
+        st.write("Requieres aumentar tu ingesta calórica, puedes utilizar suplementos alimenticios")
+    elif imc2 > 18.5 and imc2 < 24.9:
         st.subheader("Peso normal, no requieres intervención quirúrgica")
-    elif imc2 > 25 and < 29.9:
+    elif imc2 > 25 and imc2 < 29.9:
         st.subheader("Sobrepeso, se requiere manejo médico y control de habitos dieteticos")
-    elif imc2 > 29.9 and < 34.9:
+    elif imc2 > 29.9 and imc2 < 34.9:
         st.subheader("Obesidad grado I")
-        comorb=st.checkbox("Tienes alguna enfermedad como Diabetes mellitus, hipertensión arterial, dislipidemias")
-        if comorb==True:
-            st.subheader("Eres candidato a cirugía bariátrica")
-        else:
-            st.subheader("Debes mantener un estilo de vida saludable, con dieta para reducción de peso y aumentar ejercicio físico")
-    elif imc2 >35 and <39.9:
+        st.text ("No eres candidato a cirugía bariátrica, Recomendacion: dieta y aumento de actividad física")
+        # no funciona correctamentecomorb=st.selectbox("Tienes alguna enfermedad como Diabetes mellitus, hipertensión arterial, dislipidemias",("si","no"))
+        #if comorb=="si":
+           # st.subheader("Eres candidato a cirugía bariátrica")
+        #else:
+            #st.subheader ("No eres candidato a cirugía bariátrica, se recomenda la reducción de peso con dieta y ejercicio físico")
+    elif imc2 >35 and imc2 <39.9:
         st.subheader("Obesidad grado II")
         st.write("Requieres manejo médico, nutricional y de hábitos, tambien eres candidato a cirugía batriátrica como la Manga gástrica (gastrectomia vertical")
     elif imc2 >40:
         st.subheader("Obesidad grado III")
-        st.write("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equimo médico")
+        st.write("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
 
+    
 
 #Agregar un if para el IMC mayor a 35 con comorbilidades
 #If para un IMC mayor a 40 sin comorbilidades
