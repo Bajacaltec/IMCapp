@@ -1,6 +1,8 @@
 
 from typing import Text
 import streamlit as st
+#streamlit.text_input(label, value='', max_chars=None, key=None, type='default', help=None)
+#streamlit.number_input(label, min_value=None, max_value=None, value=<streamlit.widgets.NoValue object>, step=None, format=None, key=None, help=None)
 st.image("logo.jpeg")
 
 st.subheader("IMCapp ")
@@ -32,7 +34,7 @@ if butace==True:
         with col2:
             st.info("Requieres aumentar tu ingesta calórica")
             st.success(" RECOMENDACIÓN: utilizar suplementos alimenticios")
-    elif imc2 > 18.5 and imc2 < 24.9:
+    elif imc2 > 18.5 and imc2 <= 24.9:
         col1, col2=st.beta_columns(2)
         with col1:
             st.success("Peso normal")
