@@ -63,7 +63,7 @@ if butace==True:
             #st.subheader ("No eres candidato a cirugía bariátrica, se recomenda la reducción de peso con dieta y ejercicio físico")
     elif imc2 >35 and imc2 <39.9:
         st.info("Obesidad grado II")
-        st.warning("Requieres manejo médico, nutricional y de hábitos, tambien eres candidato a cirugía batriátrica como la Manga gástrica (gastrectomia vertical")
+        st.warning("Requieres manejo médico, nutricional y de hábitos, tambien eres candidato a cirugía batriátrica como la Manga gástrica (gastrectomia vertical)")
     elif imc2 >40:
         st.info("Obesidad grado III")
         st.error("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
