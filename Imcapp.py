@@ -1,6 +1,8 @@
 
 from typing import Text
 import streamlit as st
+import streamlit.components.v1 as components
+
 #streamlit.text_input(label, value='', max_chars=None, key=None, type='default', help=None)
 #streamlit.number_input(label, min_value=None, max_value=None, value=<streamlit.widgets.NoValue object>, step=None, format=None, key=None, help=None)
 st.image("logo.jpeg")
@@ -16,7 +18,7 @@ if not nombre:
 st.success("Gracias por ingresar tu nombre "+nombre)
 edad=st.number_input("Edad",1,99)
 peso=st.number_input("Peso",1,400)
-talla=st.number_input("Talla en metros",1.0,2.5)
+talla=st.number_input("Talla(M)",1.0,2.5)
 butace=st.button("Registrar datos")
 if butace==True:
     imc=peso/talla**2
@@ -35,7 +37,7 @@ if butace==True:
             st.write("")
         with col2:
             st.info("Requieres aumentar tu ingesta calórica")
-            st.success(" RECOMENDACIÓN: utilizar suplementos alimenticios")
+            st.success(" Recomendación: utilizar suplementos alimenticios")
     elif imc2 > 18.5 and imc2 <= 24.9:
         col1, col2=st.beta_columns(2)
         with col1:
@@ -65,7 +67,12 @@ if butace==True:
     elif imc2 >40:
         st.info("Obesidad grado III")
         st.error("Estas en alto riesgo de enfermedades metabolicas, y tu riesgo de muerte es mayor al de una persona sin obesidad, se sugiere que seas valorado por un cirujano bariatra y un equipo médico")
-#st.form("Registra tus datos"):
+st.image("logo.jpeg")
+
+st.markdown('<a href="mailto:elmedpost@gmail.com">Contactanos !</a>', unsafe_allow_html=True)
+
+
+# agregar una pagina completa components.iframe("https://elmedpost.wordpress.com",(900),900,True)
 
 #col1,col2,col3=st.beta_columns(3)
 #with col1:
@@ -80,3 +87,11 @@ if butace==True:
 #valorar edad
 #si tiene ERGE o Barret no se debe hacer la Gastrectomia en manga
 #Trastorno psiquiatrico no controlado es otra contraindicacion
+#with st.form(key='my_form'): #st.forms sirve para hacer formulares
+ #   text_input = st.text_input(label='Ingresa tu nombre')
+  #  col1, col2=st.beta_columns(2)
+   # with col1:
+    #    number_input=st.number_input(label="Edad")
+    #with col2:
+     #   st.write("Prueba")
+    #submit_button = st.form_submit_button(label='Submit')
